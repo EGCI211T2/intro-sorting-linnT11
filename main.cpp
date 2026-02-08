@@ -7,6 +7,8 @@
 
 #include <iostream>
 using namespace std;
+#include <cstdlib>  
+#include "sorting.h"
 
 int main(int argc, char * argv[]) {
     
@@ -16,7 +18,7 @@ int main(int argc, char * argv[]) {
     int *a;
     a= new int[argc-1];
     for(i=1;i<argc;i++){
-        cout<<"argv[" << i<<"]" <<argv[i]<<endl;
+        cout<<"argv[" << i<<"]=" <<argv[i]<<endl;
         a[i-1]=atoi(argv[i]);
       
     }
@@ -29,6 +31,6 @@ int main(int argc, char * argv[]) {
     cout<<"After sorting:";
     display(a,N);
     
-    
+    delete[] a;
     return 0;
 }
